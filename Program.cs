@@ -79,7 +79,7 @@ namespace ConsoleApp1
             {
                  number = Convert.ToInt32(Console.ReadLine());     //Convert.ToInt32 for while we get the input instantly converting into integer instead of string 
             } while (number < 120 || number > 1000);               //while the given number is not between 12 and 1000 keeps repeating do
-            Console.WriteLine(number);                             //writing  out just to check 
+            Console.WriteLine("\n",number);                             //writing  out just to check 
 
 
             List<int> numbers = new List<int>();                   //we create a list List<int> anything = new List<int>(); 
@@ -92,7 +92,7 @@ namespace ConsoleApp1
 
             for (int i = 0; i < numbers.Count; i++)       //numbers.Count <--- Counting the list elements
             {
-                Console.Write($"{numbers[i]}, ");         //numbers[i]   <--- write out the list elems one by one
+                Console.Write($"{numbers[i]}, ");         //numbers[i]   <--- write out the list elements one by one
             }
 
 
@@ -107,18 +107,58 @@ namespace ConsoleApp1
                 }
                 
             }
-            for (int i = 0; i < numbers.Count; i++)
+            int z = 0;                                          //create a z named integer
+            for (int i = 0; i < numbers.Count; i++)             //count the list elements
             {
-                if (numbers[i]%3 != 0)
+                if (numbers[i] % 3 != 0)                        //cheching if the list elements are divisible by 3 
                 {
-                    int z = 0;
-                    z = z + numbers[i];
-                    Console.WriteLine(z);
-                    Console.WriteLine(numbers.Min());
-                    Console.WriteLine(numbers.Max());
-        }
+
+                    z++;                                        //if it's true give z +1
+                }
                 
             }
+            Console.WriteLine($"a listaban ennyi 3al nem oszthato szam van: {z}");
+
+            int min = numbers[0];                              //min integer equal to the list [0] elements
+            int max = numbers[0];                              //max integer equal to the list [0] elements
+            for (int i = 0; i < numbers.Count; i++)            //List elements count
+            {
+                if (min > numbers[i])                         //if min > then numbers[i]
+                {
+                    min = numbers[i];                        //set min to numbers[i]
+                    
+                }
+               
+            
+            }
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                if (max < numbers[i])                       //if max < then numbers[i]
+                {
+                    max = numbers[i];                       //set min to numbers[i]
+
+                }
+            }
+            Console.WriteLine($"A minimum érték {min} , a maximum pedig: {max}");
+
+
+            List<int> odd = new List<int>();
+            int odd1 = odd[0];
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                if (i)
+                {
+
+                }
+            }
+           
+
+            List<int> paros = new List<int>();
+
+
+
+
+
 
 
             Console.ReadKey();
