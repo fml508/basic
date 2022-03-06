@@ -142,21 +142,96 @@ namespace ConsoleApp1
             Console.WriteLine($"A minimum érték {min} , a maximum pedig: {max}");
 
 
-            List<int> odd = new List<int>();
-            int odd1 = odd[0];
+            List<int> even = new List<int>();
             for (int i = 0; i < numbers.Count; i++)
             {
-                if (i)
+                if (numbers[i] % 2 == 0)
                 {
+                    int evens = numbers[i];
+                    even.Add(evens);
 
                 }
             }
+            for (int i = 0; i < even.Count; i++)
+            {
+                int evensc = even[i];
+                Console.WriteLine($"evens: {evensc}");
+            }
+
+            List<int> odd = new List<int>();
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                
+                if (numbers[i] % 2 == 0)
+                { 
+                
+                }
+                else
+                {
+                    int odds = numbers[i];
+                    odd.Add(odds);
+                }
+            }
+            for (int i = 0; i < odd.Count; i++)
+            {
+                int oddsc = odd[i];
+                Console.WriteLine($"odds: {oddsc}");
+            }
+
+
+            int oddgiven;
+            do
+            {
+                Console.WriteLine("Give a odd number:");
+                oddgiven = Convert.ToInt32(Console.ReadLine());
+            } while (oddgiven % 2 == 0);
+
+            int evengiven;
+            do
+            {
+                Console.WriteLine("Give a even number:");
+                evengiven = Convert.ToInt32(Console.ReadLine());
+            } while (evengiven % 3 == 0);
+
+            for (int i = 0; i < even.Count; i++)
+            {
+                if (evengiven == even[i])
+                {
+                    Console.WriteLine($"the odd was in the list: {even[i]}");
+                }
            
+            }
+            for (int i = 0; i < odd.Count; i++)
+            {
+                if (oddgiven == odd[i])
+                {
+                    Console.WriteLine($"the even was in the list: {odd[i]}");
+                }
 
-            List<int> paros = new List<int>();
+            }
+            List<int> tmp = new List<int>();
+            var tmps = 0;
+            for (int i = 0; i < even.Count; i++)
+            {
+                for (int j = 0; j < even.Count; j++)
+                {
+                    if (even[j] < even[i])
+                    {
+                         tmps = even[j];
+                        even[j] = even[i];
+                        even[i] = tmps;
+                        tmp.Add(tmps);
+                        
+                    }
+                }
+
+            }
+
+               
 
 
-
+            
+            
 
 
 
